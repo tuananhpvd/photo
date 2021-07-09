@@ -1,0 +1,45 @@
+@extends('hoadon.layout')
+ 
+@section('content')
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <form class="card p-3 bg-light" method="post" action="{{ route('giay_store')}}">
+            @csrf
+
+
+                <div class="form-group">
+                                <label><strong>Loại giấy :</strong></label><br>
+                                <label><input type="checkbox" name="loaigiay[]" value="A4-1"> A4-1</label>
+                                <label><input type="checkbox" name="loaigiay[]" value="A4-2"> A4-2</label>
+                                <label><input type="checkbox" name="loaigiay[]" value="A3-2"> A3-2</label>
+
+                            </div> 
+
+
+
+                <div class="form-group row">
+                    <div class="col-md-3">        
+                        <label class="col-form-label" for="tien">Tiền: </label>
+                    </div>      
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" required="true" type="number" name="tien" value="">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    <button type="submit" class="btn btn-success">Lưu</button>
+                    <a href="xem"><button type="button" class="btn btn-danger">Thoát</button></a>        
+                </div> 
+            </form>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+</div>
+
+@endsection
